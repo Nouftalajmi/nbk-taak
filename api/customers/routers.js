@@ -2,6 +2,7 @@ const express = require("express");
 const CustomerController = require("../customers/controllers");
 const passport = require("passport");
 const customrsRouter = express.Router();
+
 customrsRouter.post(
   "/",
   passport.authenticate("jwt", { session: false }),

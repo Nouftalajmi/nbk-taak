@@ -36,16 +36,6 @@ exports.localStrategy = new LocalStrategy(
           return done(null, foundUser);
         }
       );
-
-      //   const foundUser = await User.findOne({ username: username });
-      //   if (!foundUser) {
-      //     return done(null, false);
-      //   }
-      //   const passwordMatch = await bcrypt.compare(password, foundUser.password);
-      //   if (!passwordMatch) {
-      //     return done(null, false);
-      //   }
-      //   return done(null, foundUser);
     } catch (error) {
       return done(error);
     }
@@ -55,7 +45,7 @@ exports.localStrategy = new LocalStrategy(
 exports.jwtStrategy = new JWTStrategy(
   {
     jwtFromRequest: fromAuthHeaderAsBearerToken(),
-    secretOrKey: config.JWT_SECRECT,
+    secretOrKey: config.JWT_SECRET,
   },
   async (jwtPayload, done) => {
     try {

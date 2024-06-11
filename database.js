@@ -1,29 +1,6 @@
-// const sqlite3 = require("sqlite3");
-
-// const db = new sqlite3.Database(":memory");
-
-// db.serialize(() => {
-//   db.run(`
-//     CREATE TABLE IF NOT EXISTS User (
-//         id INT AUTO_INCREMENT PRIMARY KEY,
-//         username VARCHAR(50) NOT NULL UNIQUE,
-//         password VARCHAR(100) NOT NULL
-//     );
-//     CREATE TABLE IF NOT EXISTS Customer (
-//         id INT AUTO_INCREMENT PRIMARY KEY,
-//         name VARCHAR(100) NOT NULL UNIQUE,
-//         number VARCHAR(20) NOT NULL UNIQUE,
-//         gender ENUM('male', 'female') NOT NULL,
-//         dob DATE NOT NULL
-//     );
-//     `);
-// });
-
-// module.exports = db;
-
 const sqlite3 = require("sqlite3");
 
-const db = new sqlite3.Database(":memory");
+const db = new sqlite3.Database(":memory:");
 db.serialize(() => {
   db.run(
     `

@@ -35,21 +35,6 @@ exports.createCustomer = async (req, res) => {
   }
 
   try {
-    // db.run(
-    //   `INSERT INTO Customer (name, number, gender, dob) VALUES (?, ?, ?, ?)`,
-    //   [name, number, gender, dob],
-    //   function (err) {
-    //     if (err) {
-    //       console.error("Error creating customer:", err.message);
-    //       return res.status(500).json({ message: "Internal server error" });
-    //     }
-    //     const newCustomerId = this.lastID;
-    //     res.status(201).json({
-    //       id: newCustomerId,
-    //       message: "Customer created successfully",
-    //     });
-    //   }
-    // );
     db.run(
       `INSERT INTO Customer (name, number, gender, dob) VALUES (?, ?, ?, ?)`,
       [name, number, gender, dob],

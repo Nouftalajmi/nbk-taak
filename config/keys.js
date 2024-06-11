@@ -1,6 +1,6 @@
 require("dotenv").config();
 const config = {
-  JWT_SECRECT: process.env.JWT_SECRECT,
+  JWT_SECRET: process.env.JWT_SECRET,
 };
 
 for (let key in config) {

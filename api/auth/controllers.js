@@ -9,21 +9,18 @@ const hashPass = async (password) => {
 };
 
 const generateToken = (username) => {
-  const token = jwt.sign({ username: username }, config.JWT_SECRECT);
+  const token = jwt.sign({ username: username }, config.JWT_SECRET);
   return token;
 };
 
 const register = async (req, res, next) => {
   try {
-    // get the username and password
     const { username, password } = req.body;
     if (!username || !password) {
       next("Please enter a valid information");
     }
-    // hasht he password
-    const hashPassword = await hashPass(password);
 
-    // create the user in BD
+    const hashPassword = await hashPass(password);
 
     db.run(
       `INSERT INTO User (username, password) VALUES (?, ?)`,
